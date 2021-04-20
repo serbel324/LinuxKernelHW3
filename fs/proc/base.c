@@ -3222,10 +3222,6 @@ static const struct pid_entry tgid_base_stuff[] = {
 #ifdef CONFIG_SCHED_INFO
 	ONE("schedstat",  S_IRUGO, proc_pid_schedstat),
 #endif
-
-	/* SCHEDULE COUNTER REGISTERED */
-	ONE("schedule_counter",	S_IRUGO, proc_pid_schedule_counter),
-
 #ifdef CONFIG_LATENCYTOP
 	REG("latency",  S_IRUGO, proc_lstats_operations),
 #endif
@@ -3569,6 +3565,10 @@ static const struct pid_entry tid_base_stuff[] = {
 #ifdef CONFIG_SCHED_INFO
 	ONE("schedstat", S_IRUGO, proc_pid_schedstat),
 #endif
+
+		/* SCHDULE_COUNTER */
+	ONE("schedule_counter", S_IRUGO, proc_pid_schedule_counter),
+
 #ifdef CONFIG_LATENCYTOP
 	REG("latency",  S_IRUGO, proc_lstats_operations),
 #endif
